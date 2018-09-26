@@ -40,6 +40,7 @@ function cleanup {
 	tag=$(git tag -l --points-at HEAD)
 	git tag -d "$tag"
 	git push origin ":$tag"
+	git push origin ":$branch_temporary"
 	popd
 }
 
