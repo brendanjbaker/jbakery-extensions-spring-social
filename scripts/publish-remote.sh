@@ -42,4 +42,4 @@ set +e
 execute
 set -e
 
-cleanup
+cleanup || true
