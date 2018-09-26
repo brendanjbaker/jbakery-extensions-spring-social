@@ -26,6 +26,16 @@ function execute {
 	mvn release:clean release:prepare
 	popd
 
+	# Bundle.
+
+	mkdir -p ~/jbakery/$project/release
+	pushd $path_root/$project/target
+	jar_filename=$(ls -p | grep -iv / | grep -i ^jbakery | grep -i \\.jar$ | sort | head -n 1)
+	release_name="${jar_filename%.*}"
+	rm -f ~/jbakery/$project/release/$jar_filename
+	jar -cvf ~/jbakery/$project/release/$jar_filename $release_name*
+	popd
+
 	# Cleanup.
 
 	cleanup
