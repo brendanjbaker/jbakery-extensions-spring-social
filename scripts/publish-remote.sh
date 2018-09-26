@@ -23,7 +23,7 @@ function execute {
 	pushd $path_root/$project
 	export GPG_TTY=$(tty)
 	export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
-	mvn release:clean release:prepare release:clean
+	mvn release:clean release:prepare
 	popd
 
 	# Cleanup.
