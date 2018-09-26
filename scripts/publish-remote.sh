@@ -41,7 +41,5 @@ function cleanup {
 }
 
 set +e
-execute
+execute || cleanup || true
 set -e
-
-cleanup || true
