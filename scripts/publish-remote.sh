@@ -9,6 +9,8 @@ project=jbakery-extensions-spring-social
 branch_temporary=temp/$publish_id
 
 function execute {
+	set -euxo pipefail
+
 	# Check out temporary branch.
 
 	pushd $path_root
