@@ -69,7 +69,7 @@
 					<releaseVersion>${project.version}</releaseVersion>
 					<remoteTagging>false</remoteTagging>
 					<suppressCommitBeforeTag>true</suppressCommitBeforeTag>
-					<tag></tag>
+					<tag />
 				</configuration>
 			</plugin>
 		</plugins>
