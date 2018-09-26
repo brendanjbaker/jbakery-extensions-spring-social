@@ -37,6 +37,9 @@ function cleanup {
 	pushd $path_root
 	git checkout "$branch_original"
 	git branch -D "$branch_temporary"
+	tag=$(git tag -l --points-at HEAD)
+	git branch -d "$tag"
+	git push origin ":$tag"
 	popd
 }
 
