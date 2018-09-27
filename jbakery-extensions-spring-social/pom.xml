@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.jbakery</groupId>
+	<artifactId>jbakery-extensions-spring-social</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>10</maven.compiler.source>
+		<maven.compiler.target>10</maven.compiler.target>
+	</properties>
+
+	<scm>
+		<url>https://github.com/brendanjbaker/jbakery-extensions-spring-social</url>
+		<connection>scm:git:git://github.com/brendanjbaker/jbakery-extensions-spring-social.git</connection>
+		<developerConnection>scm:git:git@github.com:brendanjbaker/jbakery-extensions-spring-social.git</developerConnection>
+		<tag/>
+	</scm>
+
+	<repositories>
+		<repository>
+			<id>spring-plugins</id>
+			<url>http://repo.spring.io/plugins-release/</url>
+		</repository>
+	</repositories>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>9</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jbakery</groupId>
+			<artifactId>jbakery-arguments</artifactId>
+			<version>0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>5.1.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.1.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.1.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-core</artifactId>
+			<version>2.0.0.M4</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<developmentVersion>${project.version}</developmentVersion>
+					<releaseVersion>${project.version}</releaseVersion>
+					<remoteTagging>false</remoteTagging>
+					<suppressCommitBeforeTag>true</suppressCommitBeforeTag>
+					<tag>${project.version}</tag>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
